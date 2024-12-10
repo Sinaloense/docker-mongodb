@@ -1,0 +1,12 @@
+services:
+  mongodb:
+    image: mongo:7.0.15-jammy
+    environment:
+      TZ: UTC
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: vn1jyd57aNu6Jdlx
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongodb/data/db/:/data/db/
+      - ./mongodb/mongod.conf:/etc/mongod.conf

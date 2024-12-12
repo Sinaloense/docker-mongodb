@@ -6,7 +6,13 @@ services:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: vn1jyd57aNu6Jdlx
     ports:
-      - "27017:27017"
+      - "27015:27017"
+    networks:
+      - veve
     volumes:
       - ./mongodb/data/db/:/data/db/
       - ./mongodb/mongod.conf:/etc/mongod.conf
+networks:
+  veve:
+    driver: bridge
+    external: true
